@@ -1,29 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#461634"
     tools:context=".Button_7">
+
     <EditText
-        android:id="@+id/edittext_button7"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:layout_marginLeft="10dp"
+        android:id="@+id/add_drag_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/_8sdp"
         android:background="#ff0066"
-        android:hint="ADD DRUG"></EditText>
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:hint="Drag Name" />
+    <EditText
+        android:id="@+id/add_drag_problem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="#ff0066"
+        android:maxLines="1"
+        android:hint="Solution" />
+    <EditText
+        android:id="@+id/add_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:background="#ff0066"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:hint="Drag Name" />
+    <EditText
+        android:id="@+id/add_drag_descryption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:background="#ff0066"
+        android:maxLines="10"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:hint="Drag Name" />
 
- <Button
-     android:id="@+id/button_button7"
-     android:layout_width="80dp"
-     android:layout_height="40dp"
-     android:text="ADD"
-     android:layout_marginTop="50dp"
-     android:layout_marginLeft="280dp"
-     android:background="#ff0066"></Button>
+    <Button
+        android:id="@+id/button_button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="#ff0066"
+        android:text="ADD" />
 
 
-</RelativeLayout>
+</LinearLayout>

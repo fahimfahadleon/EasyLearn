@@ -1,7 +1,7 @@
 package com.example.shoab.easylearn;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +18,13 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseHelper db;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,LoginActivity.class));
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -32,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent LoginIntent=new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(LoginIntent);
+                finish();
             }
         });
         mButtonRegister.setOnClickListener(new View.OnClickListener() {

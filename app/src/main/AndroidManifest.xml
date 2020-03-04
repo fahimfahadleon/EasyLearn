@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Button_5"></activity>
+        <activity android:name=".Button_5" />
         <activity android:name=".Diabetes" />
         <activity android:name=".Diarrhoea" />
         <activity android:name=".Gastric" />
@@ -27,7 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"/>
         <activity android:name=".DashBoard" />
         <activity android:name=".Button_1" />
     </application>

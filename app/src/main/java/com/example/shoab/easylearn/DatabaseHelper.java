@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return false;
     }
 
-    public void DeleteRegestratopm(String username,String password){
+    public void DeleteRegestration(String username,String password){
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         sqLiteDatabase.execSQL("DELETE FROM registeruser WHERE username = '"+username+ "' AND password = '"+password+"'");
         sqLiteDatabase.close();
@@ -92,7 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         ContentValues contentValues=new ContentValues();
         contentValues.put("MedicineName",dragname);
         db.execSQL("INSERT INTO  DRUGLIST(MedicineName) VALUES("+dragname+")");
-       // long res =db.insert("DRUGLIST",null,contentValues);
+        long res =db.insert("DRUGLIST",null,contentValues);
         db.close();
         return res;
     }
