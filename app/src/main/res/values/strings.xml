@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EasyLearn</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    <string name="not_registered">not_registered</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm_password</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="Login">LOGIN</string>
+    <string name="welcome_to_our_dashboard">Welcome to our DashBoard</string>
+    <string name="search">Search</string>
+    <string name="drug_by_indication">Drug by Indication</string>
+    <string name="visiting_card">Visiting Card</string>
+    <string name="medical_news">Medical News</string>
+    <string name="drug_by_class">Drug By Class</string>
+    <string name="drug_by_generic">Drug By Generic</string>
+    <string name="add_drug">Add Drug</string>
+    <string name="job">Job</string>
+    <string name="fever">Fever</string>
+    <string name="gastric">Gastric</string>
+    <string name="diarrhoea">Diarrhoea</string>
+    <string name="diabetes">Diabetes</string>
+    <string name="add">Add</string>
+</resources>
