@@ -20,8 +20,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-         sqLiteDatabase.execSQL("CREATE TABLE registeruser(ID INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT,password TEXT)");
-         sqLiteDatabase.execSQL("CREATE TABLE DRUGLIST (ID INTEGER PRIMARY KEY AUTOINCREMENT,drugname TEXT)");
+         sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT,password TEXT)");
+         sqLiteDatabase.execSQL("CREATE TABLE DRUGLIST (ID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,type TEXT,description TEXT,solution TEXT)");
     }
 
     @Override
@@ -30,10 +30,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS DRUGLIST");
         onCreate(sqLiteDatabase);
     }
-    public Cursor GetAllData(){
+    public Cursor GetAllData(String tablename){
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
 
-        return sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        return sqLiteDatabase.rawQuery("SELECT * FROM "+tablename,null);
     }
 
     public long addUser(String user,String password){
@@ -46,10 +46,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return res;
     }
 
-    public long draglist(String dragname){
+    public long addDrag(String dragname,String dragtype,String dragdescription,String dragsolution){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put("MedicineName",dragname);
+        contentValues.put("name",dragname);
+        contentValues.put("type",dragtype);
+        contentValues.put("description",dragdescription);
+        contentValues.put("solution",dragsolution);
         long status=db.insert("DRUGLIST",null,contentValues);
         db.close();
         return status;
@@ -62,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 
     public boolean checkUser(String username,String password){
-        String[]columns = { COL_1};
+        String[]columns = {COL_1};
         SQLiteDatabase db = getReadableDatabase();
         String selection = COL_2 + "=?" + " and " + COL_3 + "=?";
         String[] selectionArgs = { username, password };
@@ -87,14 +90,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL("DELETE FROM DRUGLIST WHERE username = '"+dragname);
         sqLiteDatabase.close();
     }
-    public long addDrag(String dragname){
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
-        contentValues.put("MedicineName",dragname);
-        db.execSQL("INSERT INTO  DRUGLIST(MedicineName) VALUES("+dragname+")");
-        long res =db.insert("DRUGLIST",null,contentValues);
-        db.close();
-        return res;
-    }
+//    public long addDrag(String dragname){
+//        SQLiteDatabase db=this.getWritableDatabase();
+//        ContentValues contentValues=new ContentValues();
+//        contentValues.put("MedicineName",dragname);
+//        db.execSQL("INSERT INTO  DRUGLIST(MedicineName) VALUES("+dragname+")");
+//        long res =db.insert("DRUGLIST",null,contentValues);
+//        db.close();
+//        return res;
+//    }
 
 }
