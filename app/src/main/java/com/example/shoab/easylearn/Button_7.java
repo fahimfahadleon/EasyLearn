@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -53,7 +54,13 @@ public class Button_7 extends AppCompatActivity {
                     dragsolution.requestFocus();
                     dragsolution.setCursorVisible(true);
                 }else {
+                    long ver = db.addDrag(name,type,description,solution);
+                    if(ver<0){
+                        Toast.makeText(Button_7.this, "Drag Add Failed Internal Error!", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(Button_7.this, "Drag Add Successful!", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
 
 

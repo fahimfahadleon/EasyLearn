@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetEnd="0dp"
+    android:background="@color/colorPrimary"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/back"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:id="@+id/toolbarbackbutton"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Title"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:id="@+id/toolbartitle"/>
+
+
+        <ImageView
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/menu"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:id="@+id/toolbarmenubutton"/>
+
+
+
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

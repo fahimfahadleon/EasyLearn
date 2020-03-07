@@ -32,7 +32,7 @@ public class DashBoard extends AppCompatActivity {
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Button_1=new Intent(DashBoard.this,com.example.shoab.easylearn.Button_1.class);
+                Intent Button_1=new Intent(DashBoard.this, SearchMedicine.class);
                 startActivity(Button_1);
             }
         });
@@ -60,21 +60,21 @@ public class DashBoard extends AppCompatActivity {
         mButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Button_5=new Intent(DashBoard.this,com.example.shoab.easylearn.Button_5.class);
+                Intent Button_5=new Intent(DashBoard.this, shortbyclass.class);
                 startActivity(Button_5);
             }
         });
         mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Button_6=new Intent(DashBoard.this,com.example.shoab.easylearn.Button_6.class);
+                Intent Button_6=new Intent(DashBoard.this, showbytype.class);
                 startActivity(Button_6);
             }
         });
         mButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Button_7=new Intent(DashBoard.this,com.example.shoab.easylearn.Button_7.class);
+                Intent Button_7=new Intent(DashBoard.this,Button_7.class);
                 startActivity(Button_7);
             }
         });

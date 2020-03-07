@@ -25,29 +25,25 @@ public class Button_2 extends AppCompatActivity {
         mbutton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent DrugByIndication=new Intent(Button_2.this, com.example.shoab.easylearn.DrugByIndication.class);
-                startActivity(DrugByIndication);
+
             }
         });
         mbutton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Gastric=new Intent(Button_2.this ,Gastric.class);
-                startActivity(Gastric);
+
             }
         });
         mbutton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Diarrhoea=new Intent(Button_2.this, com.example.shoab.easylearn.Diarrhoea.class);
-                startActivity(Diarrhoea);
+
             }
         });
         mbutton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Diabetes=new Intent(Button_2.this , com.example.shoab.easylearn.Diabetes.class);
-                startActivity(Diabetes);
+
             }
         });
 
