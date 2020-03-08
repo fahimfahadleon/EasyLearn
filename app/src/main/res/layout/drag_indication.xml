@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_8sdp"
+    android:gravity="center_horizontal"
+    tools:context=".Indication">
+
+    <include layout="@layout/toolbar"
+
+        android:id="@+id/toolbar"/>
+
+    <Button
+        android:id="@+id/button_fever"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:text="@string/fever" />
+
+    <Button
+        android:id="@+id/button_gastric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/gastric" />
+
+    <Button
+        android:id="@+id/button_diarrhoea"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
+        android:text="@string/diarrhoea" />
+
+    <Button
+        android:id="@+id/button_Diabetes"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonshape"
+        android:text="@string/diabetes" />
+
+
+</LinearLayout>

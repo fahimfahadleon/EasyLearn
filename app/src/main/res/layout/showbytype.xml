@@ -9,7 +9,7 @@
     tools:context=".showbytype">
 
     <include layout="@layout/toolbar"
-        android:id="@+id/typetoolbar"/>
+        android:id="@+id/toolbar"/>
     <include layout="@layout/searchbar"
         android:id="@+id/typesearchbar"/>
     <ListView

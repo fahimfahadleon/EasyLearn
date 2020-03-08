@@ -9,16 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShowMedicine"></activity>
         <activity android:name=".shortbyclass" />
-        <activity android:name=".Diabetes" />
-        <activity android:name=".Diarrhoea" />
-        <activity android:name=".Gastric" />
-        <activity android:name=".Button_8" />
-        <activity android:name=".Button_7" />
+        <activity android:name=".job" />
+        <activity android:name=".addMedicine" />
         <activity android:name=".showbytype" />
-        <activity android:name=".Button_4" />
-        <activity android:name=".Button_3" />
-        <activity android:name=".Button_2" />
+        <activity android:name=".news" />
+        <activity android:name=".visitingCard" />
+        <activity android:name=".Indication" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"
-            android:parentActivityName=".LoginActivity"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity" />
         <activity android:name=".DashBoard" />
         <activity android:name=".SearchMedicine" />
     </application>
