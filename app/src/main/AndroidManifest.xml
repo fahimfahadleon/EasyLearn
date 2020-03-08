@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Button_5" />
+        <activity android:name=".shortbyclass" />
         <activity android:name=".Diabetes" />
         <activity android:name=".Diarrhoea" />
         <activity android:name=".Gastric" />
-        <activity android:name=".DrugByIndication" />
         <activity android:name=".Button_8" />
         <activity android:name=".Button_7" />
-        <activity android:name=".Button_6" />
+        <activity android:name=".showbytype" />
         <activity android:name=".Button_4" />
         <activity android:name=".Button_3" />
         <activity android:name=".Button_2" />
@@ -30,7 +29,7 @@
         <activity android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity"/>
         <activity android:name=".DashBoard" />
-        <activity android:name=".Button_1" />
+        <activity android:name=".SearchMedicine" />
     </application>
 
 </manifest>
