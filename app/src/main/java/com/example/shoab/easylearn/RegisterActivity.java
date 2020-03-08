@@ -17,6 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView mTextViewLogin;
     DatabaseHelper db;
 
+    
     @Override
     public void onBackPressed() {
         super.onBackPressed();
