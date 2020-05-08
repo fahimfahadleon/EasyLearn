@@ -1,6 +1,7 @@
 package com.example.shoab.easylearn;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
 
 
 public class addMedicine extends AppCompatActivity {
@@ -28,23 +29,18 @@ public class addMedicine extends AppCompatActivity {
         dragtype = findViewById(R.id.add_type);
         dragdescription = findViewById(R.id.add_drag_descryption);
         dragsolution = findViewById(R.id.add_drag_problem);
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbartoolbar);
 
         TextView title =toolbar.findViewById(R.id.toolbartitle);
         title.setText("Add Medicine");
 
-        toolbar.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
+        toolbar.findViewById(R.id.toolbarbackbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),DashBoard.class));
+                addMedicine.super.onBackPressed();
             }
         });
-        toolbar.findViewById(R.id.buttonsignout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            }
-        });
+
 
         mButton =findViewById(R.id.button_button7);
 
@@ -78,7 +74,6 @@ public class addMedicine extends AppCompatActivity {
                         Toast.makeText(addMedicine.this, "Drag Add Failed Internal Error!", Toast.LENGTH_SHORT).show();
                     }else {
                         Toast.makeText(addMedicine.this, "Drag Add Successful!", Toast.LENGTH_SHORT).show();
-
                     }
                 }
 

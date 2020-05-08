@@ -10,7 +10,7 @@
     <string name="Login">LOGIN</string>
     <string name="welcome_to_our_dashboard">Welcome to our DashBoard</string>
     <string name="search">Search</string>
-    <string name="drug_by_indication">Drug by Indication</string>
+    <string name="drug_by_indication">Drug by generic</string>
     <string name="visiting_card">Visiting Card</string>
     <string name="medical_news">Medical News</string>
     <string name="drug_by_class">Drug By Class</string>

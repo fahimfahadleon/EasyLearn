@@ -6,27 +6,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".news">
+    tools:context=".cartActivity">
+
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
 
+   <ListView
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:id="@+id/showcartitem"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
         android:padding="@dimen/_8sdp"
-        android:layout_margin="8dp"
+        android:text="total price"
         android:background="@drawable/edtshape"
-        android:text="https://www.facebook.com/"
-        android:id="@+id/facebook"/>
+        android:gravity="end"
+        android:id="@+id/totalprice"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_8sdp"
-        android:layout_margin="8dp"
-        android:background="@drawable/edtshape"
-        android:text="https://www.google.com/"
-        android:id="@+id/google"/>
 </LinearLayout>

@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,38 +18,32 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
-public class shortbyclass extends AppCompatActivity implements Serializable {
-
+public class draglist extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
+    ListView draglist;
     DatabaseHelper databaseHelper;
-    ListView classlistveiw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shortbyclass);
-
+        setContentView(R.layout.draglist);
         toolbar = findViewById(R.id.toolbar);
+        draglist = findViewById(R.id.draglist);
         databaseHelper = new DatabaseHelper(this);
-        classlistveiw = findViewById(R.id.classlistview);
 
         TextView title =toolbar.findViewById(R.id.toolbartitle);
-        title.setText("Medicine by class");
+        title.setText("Drag List");
 
         toolbar.findViewById(R.id.toolbarbackbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shortbyclass.super.onBackPressed();
+               draglist.super.onBackPressed();
+
             }
         });
-
-
-
-
 
         Cursor row = databaseHelper.GetAllData("DRUGLIST");
         ArrayList<Model> mylist = new ArrayList<>();
@@ -74,35 +67,13 @@ public class shortbyclass extends AppCompatActivity implements Serializable {
         }
 
 
-        String [] myarray = new String[mylist.size()];
-        for(int i = 0;i<mylist.size();i++){
 
-            Model model = mylist.get(i);
-            myarray[i] = model.getName();
-        }
-
-
-        Arrays.sort(myarray);
-
-        ArrayList<Model> finalisemodel = new ArrayList<>();
-
-        for (String s : myarray) {
-            for (int j = 0; j < mylist.size(); j++) {
-                if (mylist.get(j).getName().equals(s)) {
-                    finalisemodel.add(mylist.get(j));
-                }
-            }
-        }
-
-
-        classlistveiw.setAdapter(new ListviewAdapter(this, finalisemodel));
-
-
+        draglist.setAdapter(new ListviewAdapter(this, mylist));
 
     }
 
 
-    public  class ListviewAdapter extends ArrayAdapter<Model> {
+    public class ListviewAdapter extends ArrayAdapter<Model> {
         ListviewAdapter(Context context, ArrayList<Model> users) {
             super(context, 0, users);
         }
@@ -140,4 +111,5 @@ public class shortbyclass extends AppCompatActivity implements Serializable {
         startActivity(i);
 
     }
+
 }

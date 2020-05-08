@@ -43,6 +43,15 @@
         android:inputType="textPassword"
         android:hint="@string/confirm_password"/>
 
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/statuscheckR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:text="Admin"
+        android:padding="@dimen/_4sdp"/>
+
     <Button
         android:id="@+id/button_register"
         android:layout_width="wrap_content"

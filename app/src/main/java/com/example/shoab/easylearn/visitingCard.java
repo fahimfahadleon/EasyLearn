@@ -1,12 +1,13 @@
 package com.example.shoab.easylearn;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toolbar;
+
 
 public class visitingCard extends AppCompatActivity {
 
@@ -24,17 +25,12 @@ public class visitingCard extends AppCompatActivity {
         TextView title =toolbar.findViewById(R.id.toolbartitle);
         title.setText("Visiting Card");
 
-        toolbar.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
+        toolbar.findViewById(R.id.toolbarbackbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),DashBoard.class));
+                visitingCard.super.onBackPressed();
             }
         });
-        toolbar.findViewById(R.id.buttonsignout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            }
-        });
+
     }
 }

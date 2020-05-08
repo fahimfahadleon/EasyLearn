@@ -1,15 +1,18 @@
 package com.example.shoab.easylearn;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-public class Indication extends AppCompatActivity {
+import java.io.Serializable;
+
+
+public class Indication extends AppCompatActivity  implements Serializable {
 
     Button mbutton1;
     Button mbutton2;
@@ -32,43 +35,43 @@ public class Indication extends AppCompatActivity {
         TextView title =toolbar.findViewById(R.id.toolbartitle);
         title.setText("Search by diseases");
 
-        toolbar.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
+        toolbar.findViewById(R.id.toolbarbackbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),DashBoard.class));
+                Indication.super.onBackPressed();
             }
         });
-        toolbar.findViewById(R.id.buttonsignout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            }
-        });
-
-
 
         mbutton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i =new Intent(Indication.this,ShowMedicine.class);
+                i.putExtra("type","fever");
+                startActivity(i);
             }
         });
         mbutton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i =new Intent(Indication.this,ShowMedicine.class);
+                i.putExtra("type","gastric");
+                startActivity(i);
             }
         });
         mbutton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i =new Intent(Indication.this,ShowMedicine.class);
+                i.putExtra("type","diarrhoea");
+                startActivity(i);
             }
         });
         mbutton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i =new Intent(Indication.this,ShowMedicine.class);
+                i.putExtra("type","diabetes");
+                startActivity(i);
             }
         });
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addtocartActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/medicinename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:padding="@dimen/_8sdp"
+        android:text="medicine name" />
+
+    <TextView
+        android:id="@+id/medicinetype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:padding="@dimen/_8sdp"
+        android:text="medicine type" />
+
+    <TextView
+        android:id="@+id/medicineprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:padding="@dimen/_8sdp"
+        android:text="medicine price" />
+
+    <TextView
+        android:id="@+id/medicinedescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:padding="@dimen/_8sdp"
+        android:text="medicine description" />
+
+
+    <EditText
+        android:id="@+id/medicinequantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:hint="Medicine Quantity"
+        android:inputType="number"
+        android:padding="@dimen/_8sdp" />
+
+
+    <TextView
+        android:id="@+id/totalprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/edtshape"
+        android:padding="@dimen/_8sdp"
+        android:text="medicine price" />
+
+
+    <ImageButton
+        android:id="@+id/addtocart"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/cart_black"/>
+
+
+</LinearLayout>

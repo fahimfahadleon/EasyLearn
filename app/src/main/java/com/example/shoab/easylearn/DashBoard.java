@@ -1,15 +1,21 @@
 package com.example.shoab.easylearn;
 
+import android.Manifest;
 import android.content.Intent;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toolbar;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -22,6 +28,8 @@ public class DashBoard extends AppCompatActivity {
     CardView mButton7;
     CardView mButton8;
     DrawerLayout drawerLayout;
+    CardView cartbutton;
+    private final int STORAGE_PERMISSION_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +44,22 @@ public class DashBoard extends AppCompatActivity {
         mButton7= findViewById(R.id.button7);
         mButton8= findViewById(R.id.button8);
         drawerLayout = findViewById(R.id.drawerlayout);
+        cartbutton = findViewById(R.id.cart);
 
+
+
+
+        cartbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashBoard.this,cartActivity.class);
+                startActivity(i);
+            }
+        });
+
+        checkPermission(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                STORAGE_PERMISSION_CODE);
 
         drawerLayout.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +76,12 @@ public class DashBoard extends AppCompatActivity {
         });
 
 
+
+        Intent i = getIntent();
+        final String status = i.getStringExtra("usertype");
+        if(status.equals("nonadmin")){
+            mButton7.setEnabled(false);
+        }
 
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +121,8 @@ public class DashBoard extends AppCompatActivity {
         mButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Button_6=new Intent(DashBoard.this, showbytype.class);
+                Intent Button_6=new Intent(DashBoard.this, draglist.class);
+                //drag list
                 startActivity(Button_6);
             }
         });
@@ -107,8 +137,61 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent Button_8=new Intent(DashBoard.this, job.class);
+                Button_8.putExtra("status",status);
                 startActivity(Button_8);
             }
         });
+    }
+
+    public void checkPermission(String permission, int requestCode)
+    {
+
+        // Checking if permission is not granted
+        if (ContextCompat.checkSelfPermission(
+                this,
+                permission)
+                == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat
+                    .requestPermissions(
+                            this,
+                            new String[] { permission },
+                            requestCode);
+        }
+        else {
+            Toast
+                    .makeText(this,
+                            "Permission already granted",
+                            Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults)
+    {
+        super
+                .onRequestPermissionsResult(requestCode,
+                        permissions,
+                        grantResults);
+
+       if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(DashBoard.this,
+                        "Storage Permission Granted",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+            else {
+                Toast.makeText(DashBoard.this,
+                        "Storage Permission Denied",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
     }
 }

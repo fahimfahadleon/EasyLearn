@@ -35,6 +35,15 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:inputType="textPassword" />
 
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/statuscheckL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:text="Admin"
+        android:padding="@dimen/_4sdp"/>
+
     <Button
         android:id="@+id/button_login"
         android:layout_width="wrap_content"

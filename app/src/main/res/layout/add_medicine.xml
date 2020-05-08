@@ -9,7 +9,7 @@
     tools:context=".addMedicine">
 
     <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+        android:id="@+id/toolbartoolbar"/>
 
     <EditText
         android:id="@+id/add_drag_name"
@@ -33,7 +33,7 @@
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_4sdp"
         android:background="@drawable/edtshape"
-        android:hint="Solution"
+        android:hint="Generic"
         android:maxLines="1"
         android:padding="@dimen/_8sdp" />
 
@@ -46,7 +46,7 @@
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_8sdp"
         android:background="@drawable/edtshape"
-        android:hint="Type"
+        android:hint="Price"
         android:maxLines="1"
         android:padding="@dimen/_8sdp" />
 
