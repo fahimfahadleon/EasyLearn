@@ -31,10 +31,10 @@ import java.util.Collection;
 import java.util.HashSet;
 
 
-public class job extends AppCompatActivity {
+public class AddPrescription extends AppCompatActivity {
 
     Toolbar toolbar;
-    ImageButton addcv;
+    ImageButton addprescription;
     ListView listView;
 
     ArrayList<Bitmap> userbitmap;
@@ -42,8 +42,8 @@ public class job extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.job);
-        addcv = findViewById(R.id.uploadcv);
+        setContentView(R.layout.activity_add_prescription);
+        addprescription = findViewById(R.id.uploadcv);
         listView = findViewById(R.id.cvlist);
         userbitmap = new ArrayList<>();
 
@@ -58,10 +58,10 @@ public class job extends AppCompatActivity {
         String status = i.getStringExtra("status");
 
 
-        if (status.equals("admin")) {
-            addcv.setEnabled(false);
+        if (status.equals("nonadmin")) {
+            addprescription.setEnabled(false);
 
-            String checkdata = Environment.getExternalStorageDirectory().getAbsolutePath() + "/something/";
+            String checkdata = Environment.getExternalStorageDirectory().getAbsolutePath() + "/prescription/";
             File directory = new File(checkdata);
 
             if (directory.exists()) {
@@ -74,12 +74,12 @@ public class job extends AppCompatActivity {
         toolbar.findViewById(R.id.toolbarbackbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                job.super.onBackPressed();
+                AddPrescription.super.onBackPressed();
             }
         });
 
 
-        addcv.setOnClickListener(new View.OnClickListener() {
+        addprescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -106,7 +106,7 @@ public class job extends AppCompatActivity {
 
                 String filename = System.currentTimeMillis() + ".png";
 
-                String storage = Environment.getExternalStorageDirectory().getAbsolutePath() + "/something/";
+                String storage = Environment.getExternalStorageDirectory().getAbsolutePath() + "/prescription/";
 
 
                 File sd = new File(storage);

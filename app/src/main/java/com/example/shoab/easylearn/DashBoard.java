@@ -27,6 +27,7 @@ public class DashBoard extends AppCompatActivity {
     CardView mButton6;
     CardView mButton7;
     CardView mButton8;
+    CardView mBUtton9;
     DrawerLayout drawerLayout;
     CardView cartbutton;
     private final int STORAGE_PERMISSION_CODE = 1;
@@ -43,8 +44,12 @@ public class DashBoard extends AppCompatActivity {
         mButton6= findViewById(R.id.button6);
         mButton7= findViewById(R.id.button7);
         mButton8= findViewById(R.id.button8);
+        mBUtton9=findViewById(R.id.addprescription);
         drawerLayout = findViewById(R.id.drawerlayout);
         cartbutton = findViewById(R.id.cart);
+
+
+
 
 
 
@@ -82,7 +87,14 @@ public class DashBoard extends AppCompatActivity {
         if(status.equals("nonadmin")){
             mButton7.setEnabled(false);
         }
-
+        mBUtton9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DashBoard.this,AddPrescription.class);
+                i.putExtra("status",status);
+                startActivity(i);
+            }
+        });
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -16,6 +16,7 @@
         android:id="@+id/button_fever"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/_8sdp"
+        android:layout_margin="@dimen/_8sdp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonshape"
         android:layout_marginBottom="@dimen/_4sdp"
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_4sdp"
+        android:layout_margin="@dimen/_8sdp"
         android:background="@drawable/buttonshape"
         android:text="@string/gastric" />
 
@@ -34,6 +36,7 @@
         android:id="@+id/button_diarrhoea"
         android:layout_width="match_parent"
         android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_margin="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_4sdp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonshape"
@@ -44,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_4sdp"
+        android:layout_margin="@dimen/_8sdp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonshape"
         android:text="@string/diabetes" />

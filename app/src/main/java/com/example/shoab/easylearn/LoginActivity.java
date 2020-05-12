@@ -37,9 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         mTextViewRegister = findViewById(R.id.textview_register);
 
 
-        Intent i =new Intent(this,DashBoard.class);
-        i.putExtra("usertype","admin");
-        startActivity(i);
+
 
 
         db = new DatabaseHelper(this);
