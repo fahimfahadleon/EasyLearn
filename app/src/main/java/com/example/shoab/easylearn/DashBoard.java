@@ -30,6 +30,7 @@ public class DashBoard extends AppCompatActivity {
     CardView mBUtton9;
     DrawerLayout drawerLayout;
     CardView cartbutton;
+    ImageButton menu;
     private final int STORAGE_PERMISSION_CODE = 1;
 
     @Override
@@ -47,6 +48,14 @@ public class DashBoard extends AppCompatActivity {
         mBUtton9=findViewById(R.id.addprescription);
         drawerLayout = findViewById(R.id.drawerlayout);
         cartbutton = findViewById(R.id.cart);
+        menu = findViewById(R.id.menu);
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
 
 
 
@@ -70,6 +79,7 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.closeDrawer(GravityCompat.START);
+
             }
         });
 
@@ -77,6 +87,7 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                drawerLayout.closeDrawer(GravityCompat.START);
             }
         });
 
